@@ -12,8 +12,11 @@ function App() {
 
   const [alert, setAlert] = useState(null)
 
-  const showalter = (message) => {
-    setAlert({msg: message})
+  const showalter = (message, type) => {
+    setAlert({msg: message, type: type})
+    setTimeout(()=>{
+      setAlert(null);
+    }, 2000)
   }
 
  
@@ -21,7 +24,7 @@ function App() {
     <>
   <Navbar />
   {/* <BelowSection /> */}
-  <Alters alter = {alert} />
+  <Alters alter = {alert} showalter={showalter} />
   <TextForm  header = "Textarea" showalter={showalter} />
   {/* <div><h1>hello</h1></div> */}
   {/* <AboutDarkMode /> */}

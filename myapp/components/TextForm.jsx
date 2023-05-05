@@ -8,25 +8,27 @@ function TextForm(props) {
         console.log("upperclick")
         let mytext = text.toUpperCase();
         setText(mytext);
-        props.showalter("To Upper Case")
+        props.showalter("To Upper Case", "primary")
     }
 
     function convertlocase() {
         console.log("Lowerclick");
         let mytext = text.toLowerCase();
         setText(mytext);
+        props.showalter("To Lower  Case", "primary")
     }
 
     const convertclear = () => {
         console.log("convertclear")
         setText('')
+        props.showalter("Text Clear", "primary")
     }
 
     const convertfirst = () => {
-        console.log("convertfirst")
         // let mytext = text.charAt(0).toUpperCase();
         let mytext = text[0].toUpperCase() + text.substring(1);
         setText(mytext)
+        props.showalter("Convert first", "primary")
     }
 
     const handelCopy = () => {
@@ -35,6 +37,7 @@ function TextForm(props) {
         text.select()
         text.setSelectionRange(0, 9999)
         navigator.clipboard.writeText(text.value)
+        props.showalter("Copy Text", "primary")
     }
 
     const handelExtra = () =>{
