@@ -57,16 +57,17 @@ function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" id="exampleFormControlTextarea1" cols="180" rows="15" value={text} onChange={handelonchange}></textarea>
                     <button disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={convertupcase} > Convert UpperCase</button>
-                    <button  disabled={text.length === 0}  className="btn btn-secondary mt-3 mx-2" onClick={convertlocase} > Convert LowerCase</button>
-                    <button  disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={convertclear} > Clear Text</button>
-                    <button  disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={convertfirst} > First Text Capital</button>
-                    <button  disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={handelCopy} > Copy</button>
-                    <button  disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={handelExtra} > Extra Space Remove</button>
+                    <button disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={convertclear} > Clear Text</button>
+                    <button disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={convertfirst} > First Text Capital</button>
+                    <button disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={convertlocase} > Convert LowerCase</button>
+                    <button disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={handelCopy} > Copy</button>
+                    <button disabled={text.length === 0} className="btn btn-secondary mt-3 mx-2" onClick={handelExtra} > Extra Space Remove</button>
                 </div>
                 <div className='mt-3'>
                     <h1> Word Count</h1>
                     <p> Number of Word {text.split(" ").filter((element)=>{return element.length != 0}).length}, and Number Of Charecter is {text.length}</p>
-                    <p> Minute To Read {0.008 * text.split(" ").length}</p>
+                    {/* <p> Minute To Read {0.008 * text.split(" ").filter((element)=>{return element.length != 0}).length}</p> */}
+                    <p> Minute To Read {0.008 *  text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</p>
                     <h3> PreView</h3>
                     <p>{text.length > 0 ? text : "Nothing to preview"}</p>
                 </div>
