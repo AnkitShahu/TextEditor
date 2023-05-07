@@ -65,7 +65,7 @@ function TextForm(props) {
                 </div>
                 <div className='mt-3'>
                     <h1> Word Count</h1>
-                    <p> Number of Word {text.split(" ").filter((element)=>{return element.length != 0}).length}, and Number Of Charecter is {text.length}</p>
+                    <p> Number of Word {text.split(/\s+/).filter((element)=>{return element.length != 0}).length}, and Number Of Charecter is {text.length}</p>
                     {/* <p> Minute To Read {0.008 * text.split(" ").filter((element)=>{return element.length != 0}).length}</p> */}
                     <p> Minute To Read {0.008 *  text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</p>
                     <h3> PreView</h3>
