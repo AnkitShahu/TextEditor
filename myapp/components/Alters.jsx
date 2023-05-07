@@ -7,7 +7,7 @@ function Alters(props) {
     }
     return (
             props.alter && <div className={`alert alert-${props.alter.type} fade show mx-2`} role="alert">
-                <strong>{Capitalie(props.alter.type)}</strong>{props.alter.msg}
+                <strong>{Capitalie(props.alter.type)}</strong>  {props.alter.msg}
             </div>
        
     );

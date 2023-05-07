@@ -22,11 +22,11 @@ function App() {
  
   return (
     <>
-  <Navbar />
+  {/* <Navbar /> */}
   {/* <BelowSection /> */}
   <Alters alter = {alert} showalter={showalter} />
   <TextForm  header = "Textarea" showalter={showalter} />
-  {/* <div><h1>hello</h1></div> */}
+
   {/* <AboutDarkMode /> */}
     </>
   )
